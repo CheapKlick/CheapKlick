@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheapKlick</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  font-family: "Jost", sans-serif;
+ list-style: none;
+ text-decoration: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%; 
+}
+.logo img{
+    max-width: 170px;
+    height: 170;
+}
+.navmenu{
+    display: flex;
+}
+.navmenu a{
+    color: #2c2c2c;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+.navmenu a:hover{
+    color: #EE1C47
+}
+.navmenu a.active{
+    color: #088178;
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+}
+.nav-icon i{
+    margin-right: 20px;
+    color: #2c2c2c;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color: #EE1C47
+}
+#menu-icon{
+    font-size: 35px;
+    color: #2c2c2c;
+    z-index: 10001;
+    cursor: pointer;
+}
+section{
+    padding: 12% 10%
+}
+.main-home{
+    width: 100%;
+    height: 40vh;
+    background-image: url(image/b1.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.main-text h2{
+    color: #fff;
+    font-size: 65px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 6px 0 10px;
+}
+
+header.sticky{
+    background: #fff;
+    padding: 20px 10%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+.center-text h2{
+    color: #111;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.center-text span{
+    color: #ee1c47;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 2rem;
+}
+.row{
+    position: relative;
+    transition: all .40s;
+}
+.row img{
+    width: 100%;
+    height: auto;
+    transition: all .40s;
+}
+.row img:hover{
+    transform: scale(0.9);
+}
+.product-text h5{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #27b737;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.heart-icon{
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+}
+.heart-icon:hover{
+    color: #EE1C47;
+}
+.ratting i{
+    color: #FF8C00;
+    font-size: 18px;
+}
+.price h4{
+    color: #111;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.client-reviews{
+    background-color: #F3F4F6;
+}
+.reviews{
+    text-align: center;
+}
+.reviews h3{
+    color: #111;
+    font-size: 25px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 700;
+}
+.reviews img{
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+.reviews p{
+    color: #707070;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.reviews h2{
+    font-size: 22px;
+    color: #000;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 2px;
+}
+.up-center-text h2{
+    text-align: center;
+    color: #111;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700px;
+    margin-bottom: 30px;
+}
+.contact{
+    background-color: #F3F4F6;
+}
+.contact-info{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    gap: 3rem
+}
+.first-info img{
+    width: 140px;
+    height: auto;
+}
+.contact-info h4{
+    color:  #212529;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.contact-info p{
+    color: #565656;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .42s;
+}
+.contact-icon:hover{
+    color: #ee1c47;
+}
+.social-icon i{
+    color: #565656;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: all .42s;
+}
+.social-icon i:hover{
+    transform: scale(1.3);
+}
+.end-text{
+    background-color: #edfff1;
+    text-align: center;
+    padding: 20px;
+}
+.end-text p{
+    color: #111;
+    text-transform: capitalize;
+}
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+#prodetails .single-pro-details{
+    width: 50;
+    padding-top: 30px;
+}
+#prodetails .single-pro-details h4{
+    padding: 60px 0 40px 0;
+}
+#prodetails .single-pro-details h2{
+    font-size: 26px;
+}
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+#prodetails .single-pro-details input{
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+#prodetails .single-pro-details button{
+    background: #088178;
+    color: #fff;
+}
+#prodetails .single-pro-details span{
+    line-height: 25px;
+}
+.normal {
+    width: 60px;
+    height: 42px;
+    font-weight: 500;
+    color: #088178;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="image/logo.png" alt=""></a>
+
+        <ul class="navmenu">
+            <li><a href="#">home</a></li>
+            <li><a class="active" href="#">shop</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+            <a href="cart.html">
+                <i class='bx bx-cart'></i>
+              </a>
+        </ul>
+
+        <div class="nav-icon">
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="#"><i class='bx bx-user' ></i></a></div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            
+    </header>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="image/aa.PNG" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+
+                <div class="small-img-col">
+                    <img src="image/aa.PNG" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="image/Strng-Photoroom.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="image/a.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="image/aaa.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6>Home / Kitchen/bathroom-Accessories</h6>
+            <h4>Portable Basket</h4>
+            <h2>28.50 aed</h2>
+            <select>
+                <option>Select color</option>
+                <option>white</option>
+                <option>Black</option>
+                <option>Orange</option>
+                <option>Green</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal"> Add To Cart</button>
+            <h4>Product details</h4>
+            <span>
+                
+
+                Introducing our Portable Shower Caddy Basket: the ultimate organizer for your on-the-go bathing essentials.<br>
+                 Crafted with durable, lightweight materials, this caddy offers convenience and functionality wherever you roam.<br>
+                 Its spacious compartments and sturdy handle ensure easy transport of your shampoo, conditioner, soap, and more.<br>
+                 Say goodbye to bathroom clutter and hello to hassle-free showers, whether at home or away..</span>
+        </div>
+
+    </section>
+
+    <section class="trending-products" id="trending">
+        <div class="center-text">
+            <h2>Featured <span>Products</span></h2>
+        </div>
+
+        <div class="products">
+
+
+            <div class="row">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1jUZ5S8GGk-xZpGO72iW59WgQr6qDdYdloPdc4GKPsaZ3OWQORYmhd5I5s1xzsSwFgQ&usqp=CAU" alt="">
+                <div class="product-text">
+                    <h5>Sale</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+                </div>
+                <button class="normal"> Add To Cart</button>
+                <div class="ratting">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+
+                </div>
+
+                <div class="price">
+                    <h4>Dish Drying Mat</h4>
+                    <p>34.99 aed</p>
+                </div>
+            </div>
+            <div class="row">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSExMWFRUWGB0YGBcYGBcdHhgZGBgYFx
+                0XHRgYHSggHR0lHRcVITEhJSktLi4uGCEzODMtNygtLisBCgoKDg0OFxAQGi0lHx0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0rLSsrKy0tKy0tLS0tLS0tLS0tKzctL
+                S0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAEBQMGAAIHAQj/xABLEAACAQIEAwQHAwgHBwMFAAABAgMAEQQSITEFQVEGImFxEzJCgZGhwVKx0QcUIzNicoLwFV
+                OSssLh8RY0c5Oiw9IkY9NDVGV0s//EABoBAAMBAQEBAAAAAAAAAAAAAAABAgMEBQb/xAAlEQEBAAICAgICAQUAAAAAAAAAAQIRAzEEIRJRQWEiBRMUMkL/2gAMAwEAAhEDEQA/AOhSx3UHkwDA+B
+                F6Eaw0GoqbsjiPS4HCMdSYI7/vKoU/NTW/EcGVa97g/EeYqCR4c3BB6WFZ+bnfa3WvI0v/AD0ol25efwGlBlscGtydaPVRYkb6ChTvU0R8dTyFMN1flW5nFteVA4jEKgzOQo5k/d/lVY4z2uyqRHZF
+                5yPa/uB29+vgKCWTi/EY41BdrXFwu5J20H12rl/ariaNJ6Ru53QoG5axJvb3+VLOIdoXkJENyT60r6/f9fhSkxC+ZiXc7k6/fT2egUV7uxBAY3F/Emi+FPaX3VHM1R4Fj6QEct6Rujdm379dW4ae6K
+                432dxIzDWuv8LmAjBYgDxpQU1Ra3ZKAHFATaNGc+8D5At8QKltim2VVH7v4yfSqJHiI65xifWbzP310dsJit+6fcv/AJVWsd2YIuf0ieYDL8V2+dK405VSkNLsa2lPMZwyRejDqp/Hb30i4kCuhBB8
+                anSttMO21E3oaAaURekEJ3qSOtWFexb0EPgp5gKRwtTzAGrhU9wtHqKBwlGhtKA9vXla17QFb/JTiWbh8a39R5F/6zIB8JBVpx8RIBHL6/6VQ/yI4kehxMZPqyq9v+ImX/s10t+JKCARodqCKMOvxr
+                JW031o7HYk2vYeAqt8S45FEftuPZU7HxPL5mgGvosouxsOfgPOknEu1Ecd1gAdvtn1R9W+Q8ap3aXtffSV79Ik2Hn+La9KpuMxk0/rn0cf2Bz8+Z9+nhTLR7xztVnbRjNJsPsr5W+nxquT55DmmbMe
+                SjYfD6fGsWyiyi3jzPvqF5aStJmewtsOgod5eQ+AqXDYR5fV0H2j9OtWXg3ALmyKWY7nn/kKm3RyEGF4Qz6voOg3955e6rhwDsi0ljYInW33CrbwXsukdmkszdOQ/GrC5CLfkNAB16VO7VakIoey2G
+                jA7mZuRubk+FjTQRIgBlbQbJfQeZ3Y/LwoLifFxCCSQZCLnog/n41Q+KdoHkN1YgHQHdm8FHIVc/ii+3SZ+2CQiy5UHjYfLf5Utf8AKP8A+4PcCfpVc4D+T/E4q0k7/m8Z11GeRh4A6L5/I1b8H+Tf
+                AIBnWWY9ZJX+6PKPlR8qeg8H5R+rr7xb6U6wPbpG3AP7ppfxDsrwyNGZ8PGijds8g+Ya96o2K4IrOWw8GJijGzESEN498HT31P8Ac12Pi6tJLgsVuQjnn6p+Ox99VvjfBnh9ZVnhPh/NqosWLxEXMS
+                L4Xv8AD/M074b2mJGVW80ar3stI5+ERtrh2sf6pzr/AAsd/I/GlMlwSCCCNCCLEeYp1PiUY6ra/wAvKoMWLj9J3ltZZBq6eB+2vhuOR5FWCUqB8a2j3rTERlDY26gjUMOoPMVtFUmOgXarBgBtVdwh1q
+                yYBedXEnmGXSpqhgOlEA0G8tWV7esoDl/5HZ8uInj+3CG/5bhf+6a6BxziKRnvHYaKNSfd+NcV7OcUbDTekVst1ZSdNjrz8VFEcR7UliRECzHd2194B38z86ZLrx/tc2SzuI05Aes3v3Pu99UTGccllu
+                sI9Gm2Y7n38vdr40uZLtnlYu56nT+fDavXk+HSkNPI4lTUd5up+leSS1DJNRWD4Y8mrd1fmfdy99K1WgoJY2UEnoKbYDgl9ZNT9kbf50/4HwAt3Y08z+JroHBOzCRWZu833VFyVJrtW+BdlWkszjIvzN
+                XfBcLSJbIoHj1plFBapWT/AEqRsEsdJu0OPEfjltZesjDQe4a/xVY/R3NufSuV9puJZ3Yg6AsR5uTb4ILVWKaUcSxTSuUvcAksftHmx8Kun5POzK2GMmW5P6pSNgPbt93l5VVuC8LLpGPaxEgQHpGD3j
+                7wD8q7CmVFCqLKoAA6ACw+VFOJpsRb+d6Scb7Rx4Ze/rIRcRg6+/oPH4XpL2k7arHePD2Z9i+6r5faPy86ouGhmxcwjS7yyHdj4XLM3IAAn3VNuvdVpZOCcakxXEITJYhc7KnsrljcjTrcA33q5T9pwr
+                ZTE5PgVt8TW/ZrsrFhEsO/Kws8pH/So9lfDnz5WX8U4SM5YNt4f518753kTPmxy/56bYT0qnaPGelnaTKEuBoDfbS5Nhcm1VrGnUEaHrV7xXCVkTKNHGzddSbHw191UbicTI+RhZlNiK9rwufDk45Mfw
+                xzxsqfDY4nuvvyPWmGGxVtOXMUkC3FSxSnbmNvEV2ys7DPEKoFj6hN/FCfaHh1HPz1oUgg2PLpz6EeFTRy3W/LmKGQ2bIefqH/AA/UePnSsPY/AtrVowJqp4PerJgZNqqJqxRNprUy0Hh30qcPQaW9ZU
+                easoD52YX0rZSBounjzqPNXlyTYak8hQEjSVkETyGyi/U8h7/pTDA8FLayaD7I+p+gqy4Hh2wAsBU3JUhTwzgoBBtnfy28hyq98E7JlrNLoPs8694TGIvVUX6mnseNao2o4wWCVAFVQoo6NRSEYxudSL
+                Ox50EfBxy1rVnA86UHEEDehJsY2woB2+KC7nWuJ4tTYKd+fuVfxroju3mao3GkyzsvQ/4ENPEqecJxkccsJY5UijYk+OQAe+5oTtH2uknukd0i+befh4UoxJ7reQ/vJUEGEvq3wosV+EUSFvAdauP5PVy4xABurj/
+                oLfSkKRWqxdhv99jPg/zRh9aWWEyxuN/Kd10dscguC2Vujaf5Ulxcym/eX4ijOKoCDcA+dVXE4JL3t8zXjc/9Gzzs1nNT9NceafQqWZRre/lVB7Szl8QxPgLeSqKvCoALWqi8ehJne1t+dd3h+Dj4073U55/IKDWpPOoy
+                p5g1imu1A2CaxB5HQ17j4+nmpoaA8utGRHMhU7rVRNb4ae9j138+f4++n2Blqrw6ae/+fdenGCmogWzDTUcrUgwc1OMPJTArWsry9ZQHAcFw95dhZftH6D61Y+HcKVNFF25ncmrLwfs28vLKvU1ceHcFjiHdGvWs7lauT
+                Si4bhkh/wDpt8KcYbhcn2bVc1wlSrh6k9q3Bwt6Oj4Y3WnSpbQb1sooIBBwnmTRIwQFFF60JpgK2FBqM4Ib8uZqXiGOjgTPK2VeXUnoBzNc47S9qZMRdF7kX2Ru3ix5+W330hDHtH2oRAY8NYnnJy/h6+dV/tT/ALwT1yn
+                4xpStIS/gOtMe1p/SqeqJ/wDzWrxLJs6beI/A1KiVvMndhPUf4BXt6A1NPuwq/wDq1PRH/u2pPDBdWdmCRp68jbDwA9pjyUfLejOwXHhNxBYolKQLHIbH1pGAtnc+82GwvTxhWrnxni0SSGJ2ytYEE7G9+fI6c6Ws4I3FJ+3
+                /AOvP7i/WqUkzKbqxXyJH3Vw/5uU5MsbOq9OeBjlxY543VsdGkkCgsTYAXJ6AVzHtFLIs5aRJEDElCysAVOosTvp0vRrY2QjKXYg7gkmhMP2oxcF0WZin2JAHW3TK4Nh5Wro4ueclvrpy8/j3ik99ocLjyNmo1cYreso8xp
+                Qb8fgkP6bBxj9rDkxHzy96P/poiHDYeT9Ti8hPsYhSvu9ImZT7wtbenP7EIqHUNbwNFQqQ1+7bY95fuJvSrH4SbDtkmTKbXBBBDDqpBsw8jUuHxi2FzYjrf+f9achCJ7q1xbQ3H30bh25jblQE2JViLX8f8r04geAqAMyWFtdfnR
+                QMwstOsNLrSaDC31Rg3lTCEMNxT2Rr6avaCzV5QFrji5AWoqKGh+FYyOeNZYySjXtca6EggjzBplElYqaLDWjjkKJZhtyrQpflTAYLatWU0SwqOQgAsxAAFySbADqTSNBlpF2h7SxYW6izy/Z5L+8fpv5Un7TdtN48MbDYycz+6OX
+                n91UN3LHqTv8AiTQehXFeKyTvnkYsdh0HgByFQQ4cnVvh+NTQYYDXc9aLjSqkK1oiUP2la+Q/soPglvpR5UjlQHGU9S/h91UmmeLP6LCnqB/cqVIUSP0+IYpF7IHrynog6dW26XoZsUEhwjlQ4QXytsbKbA25X5Ug4liJcVIWd8zZS1
+                zoAq20UDQAXAsOtKaOoO0fHJMUQoXJEgOSNdlABJJ6mwJJOpqyfkywvoeJlL3Igkuev6g7e81WsWoTD6D23Hn+iI+tdY7Hdm4sMz8QnN3kFkF7KiHLcnqWKqddALW1OtxIXtVwXE4idjDCziwF+6Bt9piAfjVP4h2Wx0N2fCSBR7S5Xt
+                4n0bMQPOum8X7USIZBGvejieWxsARGMzKLglmtY6WvflStu3UsLt6Ze6noszgh4gZk9IiEqiyKxXmA9vstcX474vFc8ru7td+Pl8uOGM1NRzEGj/zXDlsrMVJHqMdQejOqNYfwaXANjV47X4LCYuA4yFkjmWxdQy/pbgN7JsxKkMrj1gR
+                7qTg+EMBa4dmNyxIUsTrsx38ATzquDhvHcto8nnnLjjr9k2P4RGcQkSL6LMu5ljkU95hmDxCwWynQgEcwKHHZ2Vn9FHZ3JtY6WtuSdQAOZpnHgZjxCOJVdHChjupQDOcxJtlAvufrTjinEQEMUb5ha0s9gpmtrlFtox46ta5rp05NoMarPh48NFnnTDXDzBSRmOthYd2M
+                A2F9wAaR+hPn5UwwEc0TtJDMY2vzAINlB8Nded6at2gZtMVhEl/bj9b37SHyBAoCrZbdQf55UVBK21wfl8x+FP8AiWDw7wJiYS6q7FRHKLG43K31sLc7+dLIOH8xejoPYcUV3BHj/pTzAcbe1s2YeOvzoL+jGtoQaGkw2U95bHrsfjSCz/0
+                1+wvz/GsqtfxN8W/GsoGnYOz2OinhV4hYDQqbXQ72Niet73N70zNUXs9ikwUTZY2bMQWbML2FwoAtsLnnzPusvDuNxzGykq32W3PkdjWUygmUpoABXpNRBqrPaXtnHhrxxWkm2/ZQ+PU+FNR7xfisOFTPM1r+qo9ZvAD67Vy3tL2olxRse5GP
+                VjB+bHmaUcQ4jJM5klcu53J+4D6Co48OTq3w/H8Kej6RKCx026/hR0MIGwr1EtUvKq6KvQKCfEknT1eX4mtsW/d89KDje1XjEU0jlUC5bLYXJ2AA1JPgBQUnEI51R4zcbaix0uAbeNr++kPavG9wRRg3f1rfZB2HmbfDxqbgvZjE+hLqrl
+                TYqQpsR8bggkixHlfWzs2XSyIwMWHDI0gz2ManKXuG7obSxr2HB4J5WEWIbDyFGX83xieiILhAP0nq+xtqTes4HwnFtNCXjMcMTZyXsLkA2AXfnzFvuqX8pGF9IsUaLmnDFgB6whykNfoC+SwO9tKUx9HbuhP6CniaJJ48qiQvm0ZXGTSz
+                DTfkddDpVt4pxb0kscBCtEsd3DkhSzcrjUELZgf2uoFUfgTyYbCSJLcCYD0cROo71zLb2R0677an2WFGN2dYpTGW9I8jINAVA6OxtYDqRtRRHX+yk+HbDiU8mIBlIJXYAa6A5QoNt7c6r3bTtHhHGWGFZJFYssjL3A/o2jDlNpCFc2zDTS
+                1VKfDsjQwNilVyFksrGzKzWvrZWPcvY9BV5wc8WHnWSWQTf+mYekkXLleNhkTvaLdTYdbHfU0eg5VDG6O8TAgpoVIYFQ13AYEXB9Ztftk86sGBdXkEAzCbKGKlTZgUV8wcXFrMLlrAU37M4ZcQcRiJCEiayWZ8zm0U4a7tYmzSRd46aHa1
+                K8djgE9DG11yqJJBp6XKoFhfUR6D97fa1Ke4Kjxs6ANFDqGsssoFjNbZF5iIHYe0TfnVf4m+aGS32bD+KOQ/VKKM4ZoyG0zKwG18sjg3HQejJ94oLh+ElxJSGKzuz/JUgFtOlyCfBiaYOsJqGPWST5SMo+Qo2DDoFaaYlYU9bqzco18T15
+                VYouwE8aLnePqwUksd2NgVy3JPWwvztrVZC2IcMyGOKO4ihIIK2Ni7g657331qTauXxDiWQZbC0cY2jTYADramOGwhFulbQLbWjVe+1I9PEj61s0IO+1SxnlzqQrSAP8yT7K/AVlGei8PnWUDbeORdB1+7nTDDvDF+ksi29o8vImuTwY/E
+                rc+lbvc9D8LjT3VPFLiHAzuzjoSSKxlkZ42Rbu0PbV5Lxwkomxbm34D51UgxJsNTW0yLmVQCtxz1GnQ/iPjRkEIArWe2sy+nmHw1tTqev4UQFrdRWrmqJqWtXheomamceCjhjE+KzAMLxwrpJL+1+xH+0dTy5GnoWk+M2HnQ4pzw/jLOZ
+                h6KGPJEWRVijNv3nkVnb3mg8D2nwU6hcVhfRNa3psMQvvMR7vv18BVRNU2bEXxJYHbQHpYGx+JvT/8Ap+dC5indQxuVvdb9cjXW/japsT2EMxaXh+KixQ1PoyfRSr/C+h8zlFLh2dxgPew7qOZbKF/tk5fnTIdF2h4hKGyyucouciRqQN
+                dbooIGh15VNwLDyoXxExIzC1jcl7696+pBsNPatrZb5p+C8LjjHpHKyPfQL3lUjo2zt4i6r4m1S8QnLm1xe2g1IW/Xz+JpbGgMrNJJnILEm5BNr9Rmtvbwp7gsOsoaKwzwsXiYjXKx08joNRsffVaX0yespP7UR1NvtROCrH3DzojAcYZ
+                ZAy2crpp3GIO6mNzY/wALjbalfap6Ccb4FiMyMVvtGozE3LSSMApYkEXc8/cKP7HYuZXWNncIQCqMWy2PNQdLeVNsRx9ZmiiysrCZWIbS2UMdjY9OVvGoOD8bxGHw4EaxyXVdHb1NBstrE+ZAHjtRBVr7aCNI4yVQa3JIHIXvc1QsZK13
+                Frmx0O+cYiJN/ew+Ne8Sx6zC0tzKT3fSJY3JFyrC67E7EeVQuplmkjQku8mVVtezNiC/dA30UH30BHhsPLK8aRRNJIymwUXsXac77AfpASei12jsZ2Ui4bEWYKZ3HeYXOUfZBPzOnyrXsX2TTh0fpJDnxDAAtyQAWyj3bn+Swx+IJ1GtT
+                llo8Ztvi8ST4iqL2qgCzhh7agnxIJW/wA+dWLAYm7tGeX1F/rVS7WcScYv0aqkgVFumcCS5zPoretcMNFDHTlUY+13pHHc6EVMi20ofBcVhZsrExON1kGUjzvt77U7TC3GYWI5Ea3+FUgJHGeXvonJRMGEtUhgpgF6MdRWUZ6AVlAcywa
+                W03XmPqPCtIcRGXID969rBtbjlbnQEeHUZgL5ahTBBGFjZTseh6Vz3Fis+TMQxvptf/Kp71Fh2uAfCtia2k1GsmolLaVFqxAAJJNgALkk7AAbmpsNhXm
+                cRxqWY7AfMknQAcydKY/nceFGWBhJMQQ04tpyKwX2G4Mp32UHW1yHaz83TCd6ULJiBtGdUgO4MlvXk6RjQbseinFzPIWmYSSsbsWtcuR47cwABYC4HOiMJEGvexYA5QBmzWDE5AxyliGTe7ZxdtCaHxeKt3gv6W5DZBoHJCkNI
+                3fYlVcg3WxNgNjVIr04S0hNiHcZCNRplByW5GxBPOlHG+BxQxl1DqwBNtcumuubw6Gn7424b0kRde+SRlORSLLr3mUBWYm229NeFY5kGUs8iE905CQbqWXLezWaPIR+jAJNhrutFbdeo5uo3HMEi/iDb6VY+PuDgIiLFri+1z5ne
+                rfiuDYecZvRIcwvmXut5lltc76G+1qRcR7JMB+ha9tcraHnpmsBy5gDxpM8fIwvq+iTCSsIVPMrcX6Xy/eD8Kbx8BnMayqokVtbxkObnkQNSRzte1By4dkhVXUqyo9wfCUn4a70ohxsmGkLRu8TE3upIzC/O2jDwNxQ3n6PYxo4I1UXue
+                X7NuR0qOXBo/rKD5/jvT7s9xg8RWWHEKhkSFnWdVCsMthZ7aEHNawsNeutKBJRTheOGqrAh3suwvty06VC2BddYnP7r6+4HcUxvc17tS2NBHixJKocM51UkoCwIDBhZhoNuZ51078n3ZYYZPznERIszElO6M6hrk5mte5vax2A5XIG3YD
+                sqYFOJlzLm7yxE6DQAOwPtWAsOXns84njjSuVnZ6lvpFxHH3NJsNiv02TqAbef+nzryeQmknCZy2LlbkGsP4Bl+l/fWbQX2cxGfESN1dvgNB8rVy7triM/EcUb3tJk/wCWqxkfFDXSux/60eJ/CuPcVmz4md/tTSN/akZvrWnGjMywvFZVA
+                XNnQbJIA6jyDXy+a2NOOGcZVTcekhPWNiy/8tzf35z5VWITei46tm6Vw7tE7fYn/cJV/wDlkBj7lt400w/HIHOUtkYbq4sR79q5UlHR8VkAAZs6jYOM1h0BPeX+EijR7dU/OI+q/EfjWVy3+lR/Ux/2pv8A5KylobQjCi1jetosGbWuCOVx9O
+                dTsxY61KtR8YWo2jFgB0o3huAaYsbhEQXklbRI16k9eijU1JwrhnpFaaRikEZszAXZmO0aDmx6nQbmlnH+0RcCKICOJDdEU3Cn7Zb25Osh29n7RuQ9j+MccSNDh8OCEPrltHm8ZPsp0iH8XMFZwliT6RiNWVbnwcX9oAa5RqRtpsaVrg80MrkkE
+                KwA2IIXNe/kaa4GUGMNYMGvfYkmUZhYG9rNY3AuASelPZGGGxZVd1Oa52c96NbvmIGZiGVSQCfXzWIJrwwq5YqHKAEkFo2K52Wzyrm1bMB+jOmoOYG4qDEPcMUcMzG8iuAQ+ViBmB7pu9jlIA1NrXtQmV3ZzJFEGBIDE5ySLaFk1uQpGvXYammR1
+                FC4sSghKv3j3VtJoQ1/Ve63zefqNlWoWxIFmRcrZAiGNFUi4N8yxXysbyRhWDd0i4v6qozAaZmlJNysUYW+RhozjMwBCsb5lPrbXK17CzKo9K5IAAypc5VBY2F+6WV31TQ2N7Ed4Ai58BxdoVWS4I5G/qEKy2uB3bWA5a9KZJiFPMG+ug3+J8qpWBxOXQkXvc5TcE3YaHYg6ajQjLbUk0dLjERCSbDS+mpJFgo59B7qmvO5sf53Sx47BJKpRxe4IGX1tjoDra3w1GlUWbhLS404aErKQoJIIChVlRmLnYBQNfhqdKf4PB4jF2QloYjr
+                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
+                AJ+A51nGOIqpyrZmHwB8fHwqt4lGkbMxufuHQDlVY4puROyVtHBTEYOiYsJWmmZl2C4XmxHpDtEpb+I91fvY/wANXXGJSHsTMqPJESA7AMBzIW4PwzL8asWLNMiyVhaq92ib9Hfow+op9if5++q52kb9ERzJFvjf6GkZB+eN9o/GsoW1e
+                UA/nxSxDKuppLNMSepNeSSEnSpMPBfb3moWjhgJP3mjokAuqgmwuxAJsOpIFgN96kCACw/nxp/hsWiTvjbCYBVJiyksO4ilBb1VFtCLjTanPZWqksZMjncD0Z8rsyf470aIRcMCVcbOhKsPJl1q44KPh/EU/QO2EldgfRykAOVzAWfUMLu5tqSTsLCyzi/ZjEYY99CV+0ouPgL2917UUoQyNLJMglf0mZJYw2UA2eFxZsosxvbXc86Y+ihxcYZE9M2UFhH+sTugm8TZXI8Y84oB5QJIGH9dHtzDNlI+BrTD4QFEVhqgAB2KldLgjUbVGWGOUm/wZr2ax8eFz+ib0gO4YlSpGljdQfiKQ9qy8s3pkUWsc/e26W8hc7+7SjOJNO41KzEeq76TL4CZbFx4PeoGcGFi0gzjQxsCr66ZgCLMPEE+6jHHKXvY9BuNTrlFzq8EVvG8Krf/AKaf8NwmGaKaVZfQ4qMo0RjfIWBgiJAGit3897ENe++1LMNhklWMsqsFhjXUA2YZwR4GwX4imU/C4nhDImRk0bLsehttWmy0m4N2qxJcDEST5LetDlRj4tYi58Tr40Bx+eOae8YlPjK5dt9TuQPid6hThhI9b5UDxGZY7xqdv1jDlf2B+0dfLXxpbEjzFzZrovqj1j9o/ZB6dTQcOHZ2PMKLkgbAch91q9hnEmVEFiTYXOgHWmeNhMdoEB37zW9duv7o/nlTBXgmvm8q34XF+mBPifkR9aeJ2faykWu3rk8h18edapwJ8PJnZldXOUEaEE62KnwU6i40qLFzL8LjF6ijwHv0pbxTiuW8cZ73tN08B4/d57acb4oE/Roe97XVR08CR+PSkcRokFqZEomOOokomIVSWyYejMNgSxsouegr3Bwl2CruflzJPgBrVlw6rGpANh7THn5+HQfWq2nRFJ2ODyxzNO8bR6r6G2YG/wBtrqNLgjKwINqtq4W/sE+LX1+FhzPKhIuKRj1VLW56D4c/jaiI+OxncFfn91T88ftXwv03PD+scfwWl+P4FFJpJAh8iw/uMKdCS+oNweYrYyAbm3mae06VP/ZLC/1J/tyf+Ve1aPzhPtL8RWUbh6cRgw9/AUclhoNKwnkKwC9Sp7am3Z5CZCsThJiO4HAaOQ/1Tg6gnky6jXe4pWulbb
+                G+xve/O/W9Epae4vHN6VkxEKxEGzEZrKehIubeJB05nerHguOY7BqrEGTCnYtaWIr4PGSy+VreFGYBoeJR5Ju7iY19ddCV5NbZhfdeROlrik83ZDFQkiIh1bcxyejLC3tqWX4Xamkfi+K8PxCvioIsuJwuWYpYmInMAGvYZiDlsLA6AWtmqsYbRQDyHP7/AH7++mZ4J+Z4eUyBVebIqoCGPdkWQsx6DLbQn1vGl6uedFON1F62kgVhZlDDxAP31slbXvtUqRZAq2UBQOQAAHuFNeFJeGQUPFh71Hxfigw0Xo0sZZNgdlHNzTBXxziXox6JDZyLs3KNev7x5f6VTMTPfQaKNvxPialxs17gEm5uWO7t9o/QfiaBY1UibRnDpirGxt3fqK3wXG5Im01F/VO3+R8aEwTd4/u/UVCU7xpk6JwntTFJYMcjdH+jfjr4U7lRZAtyQFYG4tvYixPLfY2NckvTHhvFpYbZGNhyO3l1A8BQHUMZw+Ob11F+TDRh/ENfdSifgkiar31+f4fdQfCu1imwkGU9Rt+H3VcOH41XF1YHnp+FAVNNDY6HodP9fMUXHVrmwUco7yg0vn7OkaxP/C2o+O4+flUntJwGLus3U5R4AWJ+9fhRHEGIbKNhqfM1twT9GBHKMjZybn1SCFtZ9twRY2Om1bdoMK6v6VBfSxXqPoanObisbqoYkB3A+Ferhxyy3/nrQEXGoj3c4VvsuQp+eh9163k4hGmrSIL/ALQ+QBufdXNZXRsesoQEswVRzJsPffSg34rFe0ffP7Ow8Sx0+Fz4UK2XE2zA+jBvrpmPW3IDW1bdnuHpKoOb0aEsb2LH1juPKw9wrXHj32zyz10N/pF/sJ/zD/4V7TL/AGeg/wDuT/YrK1+EZ/OubitlrKykTxPrWz1lZQZn2H/35f3H/u10OSsrKudIyUrtn+vT/h/4mpBzr2sqcuzxEmt4K8rKRmuE+tUntB/vGI8l/wAFeVlOC9K9NQjVlZVpSYH1j+79RXresaysoCIVMlZWUUDYatHY/n++K9rKCdEi3oyOsrKlTzF+o3kfurTh3+6x+RrKyi9E572q3NLOCetWVlSpeYP1b/uH7jXnZT9W/wC//wBuOsrKqdintZWVlUl//9k=" alt="">
+                <div class="product-text">
+                    <h5>Sale</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+                </div>
+                <button class="normal"> Add To Cart</button>
+                <div class="ratting">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+
+                <div class="price">
+                    <h4>Kitchen Faucet Sponge Holder</h4>
+                    <p>25.50 aed</p>
+                </div>
+            </div> 
+            <div class="row">
+                <img src="image/mm.jpg" alt="">
+                <div class="product-text">
+                    <h5>Sale</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+                </div>
+                <button class="normal"> Add To Cart</button>
+                <div class="ratting">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+
+                <div class="price">
+                    <h4>Auto Sunshade</h4>
+                    <p>78.50 aed</p>
+                </div>
+            </div>  
+            <div class="row">
+                <img src="image/n.jpg" alt="">
+                <div class="product-text">
+                    <h5>Sale</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+                </div>
+                <button class="normal"> Add To Cart</button>
+                <div class="ratting">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+
+                <div class="price">
+                    <h4>Aura Lamp</h4>
+                    <p>28.50 aed</p>
+                </div>
+            </div>  
+                          <div class="row">
+                <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/bf74398703a076f4e7764a05598747b6.jpg?imageView2/2/w/800/q/70/format/webp" alt="">
+                <div class="product-text">
+                    <h5>Sale</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+                </div>
+                <button class="normal"> Add To Cart</button>
+                <div class="ratting">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+
+                <div class="price">
+                    <h4>Closet Organizer</h4>
+                    <p>30.00 aed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="update-news">
+        <div class="up-center-text">
+            <h2>New Updates</h2>
+        </div>
+
+        <div class="update-cart">
+            <div class="cart">
+                <img src="https://img.freepik.com/free-photo/young-woman-posing-sideways-with-bags-hat_23-2147645075.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1701475200&semt=ais" alt="">
+                <h5>28 June 2024</h5>
+                <h4>Let's Start to bring sale on this summer vacation.</h4>
+                <p>Experience the ultimate summer savings with our exciting sale! Get ready to shop your favorite items at unbeatable prices and make the most of your vacation with amazing deals and discounts. Start your summer off right by taking advantage of our special offers and filling your wardrobe with all the essentials you need for a stylish season. Don't miss out on this opportunity to save big and make this summer one to remember!</p>
+                
+            </div>
+
+            <div class="cart">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSguvatuYWkfWb2MbrFxYX6R2ObygPRqVqy7aYslK5JDA&s" alt="">
+                <h5>28 June 2024</h5>
+                <h4>Let's Start to bring sale on this summer vacation.</h4>
+                <p>Experience the ultimate summer savings with our exciting sale! Get ready to shop your favorite items at unbeatable prices and make the most of your vacation with amazing deals and discounts. Start your summer off right by taking advantage of our special offers and filling your wardrobe with all the essentials you need for a stylish season. Don't miss out on this opportunity to save big and make this summer one to remember!  <br>!!This deal is only within UAE!!! </p>
+                
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-info">
+            <div class="first-info">
+                <img src="image/logo.png" alt="">
+
+                <p>+971 56 293 0438 <br> +971 50 822 1975</p>
+                <p>cheapclick.online@gmail.com</p>
+
+                <div class="social-icon">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-youtube' ></i></a>
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+            </div>
+        
+            <div class="second-info">
+                <h4>Support</h4>
+                <p>Contact us</p>
+                <p>About page</p>
+            </div>
+
+    <div class="end-text">
+        <p>Copyright © @2024. All rights Reserved</p>
+    </div>
+
+    <script>
+        VarMainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function(){
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function(){
+            MainImg.src = smallimg[3].src;
+        }
+    </script>
+
+
+    <script src="java.js"></script>
+
+
+</body>
+</html>
